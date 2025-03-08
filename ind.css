@@ -1,0 +1,163 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sidebar */
+.w3-sidebar {
+    width: 120px;
+    background: #222;
+    position: fixed;
+    height: 100%;
+    padding-top: 20px;
+}
+
+#main {
+    margin-left: 140px;
+    width: calc(100% - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Main Sections */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Left Section */
+.left {
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.info-box {
+    background: #222;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Right Section - Cards */
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    gap: 20px;
+}
+
+/* Flipping Card Styles */
+.card {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    border-radius: 10px;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-inner::before, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* Specific Background Images */
+.teacher::before {
+    content: "";
+    background: url('https://campus.srmcem.ac.in/ps/css/srmgpc.jpg') center/cover;
+}
+
+.tarot::before {
+    content: "";
+    background: url('https://media.hero-magazine.com/wp-content/uploads/2019/11/18152914/TAROT.jpg') center/cover;
+}
+
+.kitchen::before {
+    content: "";
+    background: url('https://blog.stocktake-online.com/hs-fs/hubfs/how-to-open-cloud-kitchen.jpg?width=1000&height=566&name=how-to-open-cloud-kitchen.jpg') center/cover;
+}
+
+.card-back {
+    background: #555;
+    color: white;
+    transform: rotateY(180deg);
+    position: absolute;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    width: 100%;
+    padding: 10px 0;
+    background: #111;
+    margin-top: auto;
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+    .w3-sidebar {
+        display: none;
+    }
+    
+    #main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    main {
+        flex-direction: column;
+    }
+}
